@@ -1,0 +1,15 @@
+
+price code: regular
+Title - WCCI
+Fees - $2.00
+
+
+price code: Childrens
+Title - Up
+Fees - $1.50
+
+
+price code: new release
+Title - Dr Strange
+Fees - $6.00
+
