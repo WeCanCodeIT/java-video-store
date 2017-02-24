@@ -4,33 +4,32 @@ public class VideoStoreApp {
 	public static void main(String[] args) {
 
 		RentalCalculator calculator = new RentalCalculator();
+		
+		calculateRegularFees(calculator);
+		
+		calculateChildrensFees(calculator);
+
+		calculateNewReleaseFees(calculator);		
+	}
+
+	private static void calculateRegularFees(RentalCalculator calculator) {
 		Movie regular = new Movie("WCCI", "regular");
+		printAmountDue(calculator, regular, 2);
+		printAmountDue(calculator, regular, 3);
+		printAmountDue(calculator, regular, 5);
+	}
+
+	private static void calculateChildrensFees(RentalCalculator calculator) {
 		Movie childrens = new Movie("Up", "childrens");
-		Movie newRelease = new Movie("Dr Strnage", "new release");
-		
-		Movie movie = regular;
-		int days = 2;
-		printAmountDue(calculator, movie, days);
-		int a = 3;
-		printAmountDue(calculator, movie, a);
-		int b = 5;
-		printAmountDue(calculator, movie, b);
-		
-		Movie foo = childrens;
-		int c = 3;
-		printAmountDue(calculator, foo, c);
-		int d = 4;
-		printAmountDue(calculator, foo, d);
-		int e = 5;
-		printAmountDue(calculator, foo, e);
+		printAmountDue(calculator, childrens, 3);
+		printAmountDue(calculator, childrens, 4);
+		printAmountDue(calculator, childrens, 5);
+	}
 
-		Movie bar = newRelease;
-		int f = 1;
-		printAmountDue(calculator, bar, f);
-		int g = 5;
-		printAmountDue(calculator, bar, g);
-
-		
+	private static void calculateNewReleaseFees(RentalCalculator calculator) {
+		Movie newRelease = new Movie("Dr Strange", "new release");
+		printAmountDue(calculator, newRelease, 1);
+		printAmountDue(calculator, newRelease, 5);
 	}
 
 	private static void printAmountDue(RentalCalculator calculator, Movie movie, int days) {
