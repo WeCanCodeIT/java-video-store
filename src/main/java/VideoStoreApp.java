@@ -8,18 +8,34 @@ public class VideoStoreApp {
 		Movie childrens = new Movie("Up", "childrens");
 		Movie newRelease = new Movie("Dr Strnage", "new release");
 		
-		System.out.println("amount due = " + calculator.calculate(regular, 2));
-		System.out.println("amount due = " + calculator.calculate(regular, 3));
-		System.out.println("amount due = " + calculator.calculate(regular, 5));
+		Movie movie = regular;
+		int days = 2;
+		printAmountDue(calculator, movie, days);
+		int a = 3;
+		printAmountDue(calculator, movie, a);
+		int b = 5;
+		printAmountDue(calculator, movie, b);
 		
-		System.out.println("amount due = " + calculator.calculate(childrens, 3));
-		System.out.println("amount due = " + calculator.calculate(childrens, 4));
-		System.out.println("amount due = " + calculator.calculate(childrens, 5));
+		Movie foo = childrens;
+		int c = 3;
+		printAmountDue(calculator, foo, c);
+		int d = 4;
+		printAmountDue(calculator, foo, d);
+		int e = 5;
+		printAmountDue(calculator, foo, e);
 
-		System.out.println("amount due = " + calculator.calculate(newRelease, 1));
-		System.out.println("amount due = " + calculator.calculate(newRelease, 5));
+		Movie bar = newRelease;
+		int f = 1;
+		printAmountDue(calculator, bar, f);
+		int g = 5;
+		printAmountDue(calculator, bar, g);
 
 		
+	}
+
+	private static void printAmountDue(RentalCalculator calculator, Movie movie, int days) {
+		String message = String.format("amount due for a %s movie for %s days = %s", movie.getPriceCode(), days, calculator.calculate(movie, days));
+		System.out.println(message);
 	}
 
 }
