@@ -40,7 +40,7 @@ public class RentalCalculatorTest {
 	}
 	
 	private BigDecimal calculateRegularMovieFeesFor(int days) {
-		Movie regularMovie = new Movie("regular release", "regular");
+		Movie regularMovie = new RegularMovie("regular release");
 		return underTest.calculate(regularMovie, days);
 	}
 
@@ -70,7 +70,7 @@ public class RentalCalculatorTest {
 	}
 	
 	private BigDecimal calculateChildrensMovieFeesFor(int days) {
-		Movie childrensMovie = new Movie("children's movie", "childrens");
+		Movie childrensMovie = new ChildrensMovie("children's movie");
 		return underTest.calculate(childrensMovie, days);
 	}
 
@@ -90,7 +90,7 @@ public class RentalCalculatorTest {
 	}
 	
 	private BigDecimal calculateNewReleaseFeesFor(int days) {
-		Movie newRelease = new Movie("new release", "newRelease");
+		Movie newRelease = new NewRelease("new release");
 		return underTest.calculate(newRelease, days);
 	}
 
