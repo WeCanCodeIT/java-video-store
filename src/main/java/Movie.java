@@ -1,12 +1,15 @@
+import java.math.BigDecimal;
 
 public class Movie {
 
-	String title;
-	String priceCode;
+	private String title;
+	private String priceCode;
+	private FeeCalculator feeCalculator;
 
-	public Movie(String title, String priceCode) {
+	public Movie(String title, String priceCode, FeeCalculator feeCalculator) {
 		this.title = title;
 		this.priceCode = priceCode;
+		this.feeCalculator = feeCalculator;
 	}
 
 	public String getTitle() {
@@ -15,5 +18,9 @@ public class Movie {
 
 	public String getPriceCode() {
 		return priceCode;
+	}
+
+	public BigDecimal calculateFees(int days) {
+		return feeCalculator.calculateFees(days);
 	}
 }

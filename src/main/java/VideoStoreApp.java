@@ -13,21 +13,21 @@ public class VideoStoreApp {
 	}
 
 	private static void calculateRegularFees(RentalCalculator calculator) {
-		Movie regular = new Movie("WCCI", "regular");
+		Movie regular = MovieFactory.createRegularMovie("WCCI");
 		printAmountDue(calculator, regular, 2);
 		printAmountDue(calculator, regular, 3);
 		printAmountDue(calculator, regular, 5);
 	}
 
 	private static void calculateChildrensFees(RentalCalculator calculator) {
-		Movie childrens = new Movie("Up", "childrens");
+		Movie childrens = MovieFactory.createChildrensMovie("Up");
 		printAmountDue(calculator, childrens, 3);
 		printAmountDue(calculator, childrens, 4);
 		printAmountDue(calculator, childrens, 5);
 	}
 
 	private static void calculateNewReleaseFees(RentalCalculator calculator) {
-		Movie newRelease = new Movie("Dr Strange", "new release");
+		Movie newRelease = MovieFactory.createNewRelease("Dr Strange");
 		printAmountDue(calculator, newRelease, 1);
 		printAmountDue(calculator, newRelease, 5);
 	}
