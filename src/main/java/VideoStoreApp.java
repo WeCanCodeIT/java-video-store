@@ -4,37 +4,35 @@ public class VideoStoreApp {
 
 	public static void main(String[] args) {
 		
-		RentalCalculator calculator = new RentalCalculator();
+		calculateRegularFees();
 		
-		calculateRegularFees(calculator);
-		
-		calculateChildrensFees(calculator);
+		calculateChildrensFees();
 
-		calculateNewReleaseFees(calculator);		
+		calculateNewReleaseFees();		
 	}
 
-	private static void calculateRegularFees(RentalCalculator calculator) {
+	private static void calculateRegularFees() {
 		Movie regular = new RegularMovie("WCCI");
-		printAmountDue(calculator, regular, 2);
-		printAmountDue(calculator, regular, 3);
-		printAmountDue(calculator, regular, 5);
+		printAmountDue(regular, 2);
+		printAmountDue(regular, 3);
+		printAmountDue(regular, 5);
 	}
 
-	private static void calculateChildrensFees(RentalCalculator calculator) {
+	private static void calculateChildrensFees() {
 		Movie childrens = new ChildrensMovie("Up");
-		printAmountDue(calculator, childrens, 3);
-		printAmountDue(calculator, childrens, 4);
-		printAmountDue(calculator, childrens, 5);
+		printAmountDue(childrens, 3);
+		printAmountDue(childrens, 4);
+		printAmountDue(childrens, 5);
 	}
 
-	private static void calculateNewReleaseFees(RentalCalculator calculator) {
+	private static void calculateNewReleaseFees() {
 		Movie newRelease = new NewRelease("Dr Strange");
-		printAmountDue(calculator, newRelease, 1);
-		printAmountDue(calculator, newRelease, 5);
+		printAmountDue(newRelease, 1);
+		printAmountDue(newRelease, 5);
 	}
 
-	private static void printAmountDue(RentalCalculator calculator, Movie movie, int days) {
-		BigDecimal fees = calculator.calculate(movie, days);
+	private static void printAmountDue(Movie movie, int days) {
+		BigDecimal fees = movie.calculateFees(days);
 		String message = String.format("amount due for a %s movie for %s days = %s", movie.getPriceCode(), days, fees);
 		System.out.println(message);
 	}
