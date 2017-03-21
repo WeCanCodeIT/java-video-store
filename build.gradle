@@ -6,17 +6,5 @@ repositories {
 }
 
 dependencies {
-	testCompile 'junit:junit:4.+'
+	testCompile'junit:junit:4.11'
 }
-
-task buildSrcFolders {
-
-	description 'Builds default source folders'
-
-	doLast {
-		mkdir("src/main/java")
-		mkdir("src/test/java")
-	}
-}
-
-tasks.eclipse.dependsOn buildSrcFolders
